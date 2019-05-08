@@ -47,9 +47,17 @@ TILGJENGLIGHET (Availability):
 
 
 b)
+Spørsmål: Forklare hva et patent er, og hva som kan og ikke kan patenteres?
 
+Et patent er en enerett til kommersiell utnytte av en oppfinnelse. Patenter har en tidsbegrensning på 20 år innenfor en stat. Et patent hindrer andre i å produsere, importere og selge oppfinnelsen.
 
+Det som kan patenteres:
+- En konkret praktisk løsning på et problem (en algoritme f.eks) som har teknisk karakter, teknisk effekt og er reproduserbar.
+- En oppfinnelse som er ny (kan ikke være tidligere omtalt i tidsskrifter eller noe annet sted i verden(!)
+- Oppfinnelsen må også ha oppfinnelseshøyde (må skille seg vesentlig fra tidligere teknikker)
 
-
+Det som IKKE kan patenteres:
+- Løsninger som ligner på tidligere patenter
+- Ting som ikke har praktisk betydning eller ikke løser et spesifikt problem
 
 
