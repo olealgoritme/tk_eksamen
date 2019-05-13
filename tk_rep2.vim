@@ -117,3 +117,20 @@ Dette er SQL INJECTION
 4d)
 Hva er heartbleed?
 DET ER IKKE DEL AV PENSUM
+
+
+
+DIGITAL SIGNATURE
+-------------------
+Skal man signere, bruker man private key (dette er i prinsippet slik hashes lages). 
+Skal man kryptere, bruker man public key.
+
+- Digitale signaturer baserer seg på assymetrisk kryptering (public/private key kryptering)
+
+Man lager en hash (en sjekksum) av data, og krytperer dette med sin PRIVATE KEY - dette kalles "signering"
+
+Nå kan alle i hele verden "dekryptere" sjekksummen (så den er ikke kryptert i betydningen konfidensiell), men ved at man klarer å dekryptere sjekksummen så beviser man at den var signert (kryptert) med sin PRIVATE KEY.
+
+Secret Key (AKA) Private key -- F.eks i AES 128 kryptering så brukes det en Secret Key, som det er en ukjent key, en key som kun blir gitt til de menneskene som skal ha tilgang til data som er kryptert.
+
+
