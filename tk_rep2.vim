@@ -134,3 +134,137 @@ Nå kan alle i hele verden "dekryptere" sjekksummen (så den er ikke kryptert i 
 Secret Key (AKA) Private key -- F.eks i AES 128 kryptering så brukes det en Secret Key, som det er en ukjent key, en key som kun blir gitt til de menneskene som skal ha tilgang til data som er kryptert.
 
 
+
+KRYPTERINGSMODUSER I AES
+--------------------- 
+- ECB er standard modus til AES
+- En av de to viktigste modusene er ECB (electronic code book)
+- Er den enkleste
+- deler opp blokkene, og krypteres likt. enkelt å gjennomføre
+
+Styrke:
+- tillater parallell kryptering og dekryptering av blokker
+- taps-tollerant fordi om en blokk går tapt er de andre intakte
+
+Svakheter:
+- Noen dokumentformater og bilder egner seg ikke for ECB kryptering fordi mønstrene i klarteksten kan reflekteres på avstand.
+
+- Får man tak i Secret Key, så kan man dekryptere alle pakkene, fordi de bruker samme key
+- Enklest å cracke
+
+---------------------------------------------
+CBC - Cipher Block Chaining
+
+
+Styrker: 
+- Avslører ikke mønstre i klarteksten
+- Er den vanligst brukte
+- Relativt rask og enkel
+
+Svakheter:
+CBC krever pålitelig 
+-------------------------------------------------
+DH (Diffie Hellman) og RSA - er de sikre i dag?
+
+- Spørsmålet er om DH og RSA er sikre i dag?
+
+- Forutsatt at nøklene er store nok er både DH og RSA definert som sikre, men det er noen svakheter i DH som gjør at man praksis sier at "ren" DH ikke er sikker
+
+
+-------------------------
+Hvor trygt er egentlig RSA?
+
+- RSA-768bit
+
+- Et Semi-primtall (et tall som er ett produkt av to nesten jamstore primtall)
+
+- 768bit - 232 desimalsiffer (skriver du ett tall i sekundet bruker du 4 minutter på å punche disse tallene)
+- faktorisering ville tatt ca 2000 år på en 2.2 ghz prosessor, men ble gjennomført som et samarbeid mellom flere forskningsinstitutter over to år.
+
+- Merk: VI BRUKER --IKKE-- SÅ SMÅ NØKLER SOM 768 BIT I DAG, VI BRUKER 4096x2 bits
+---------------------------------
+
+Hvordan hold OSet trygt?
+
+- Bruk et operativsystem med sikkerhetsoppdatering og support.
+- Installere patcher, helt automatisk
+- Ikke installere ukjent software, eller software med usikre kilder
+- Ha installert AV program og personlig firewall
+- Som siste forvarsel, ta backup (er du paranoid tar du backup til en online tjeneste, og så tar du i tillegg regelmessig kopi av alle filer den eksterne harddisk som du oppbevarer i en safe)
+- BitDefender er anbefalt som AV-program til Windows 10, MacOSx, Linux og Android
+
+KRYPTERING BASERT PÅ ET RANDOM TALL
+------------------------------------
+- Er ofte brukt i moderne applikasjoner. Gjerne basert på random tall eller en kombinasjon av random tall og random ascii characters eller lignende.
+
+
+Eksempel DH KEY EXCHANGE: Basis for D-H nøkkelutveksling
+-----------------------
+- Divisjon er ikke vanskelig nok
+- Vi tror at diskrete logaritmer er tilsrekkelig vanskelig
+- Starter med å velge en basis (f.eks) og en modulus (f.eks 11 - må være primtall)
+
+
+RSA: NØKKELVALG
+-------------------
+- Velg to store primtall p,q (f.eks 1024 bit, dvs min 100 desimale siffer hver)
+
+
+RSA: Krypt/dekrypt
+-------------------
+- Må kunne vise formel for dekrypter og krypteringsnøkkel'
+
+
+SSL/TLS ved OpenSSL
+-------------------
+- Ved å implemtnere av TLS og eller kryptosystemer (i c/c++) anbefales det å brukes openssl-biblioteket
+- Hvis du har kontroll på både server og klient kan du begrenser cipher suites til de sikreste
+- Eksempel på cipher suite format i TLS 1.2
+
+DEFORMATINGER av cipher suite format i TLS 1.2:
+"TLS_ECDEHE_RSA_WITH_AES_128_GCM_SHA256"
+
+Key exchange ECC (ecdhe)
+(Server) authentication: RSA
+Encryption: AES 128 bit, GCM mode
+Message Authentication Code: SHA256
+
+
+
+SHA - Secure Hash Algorithm
+----------------------------
+- Utviklet ved NSA og godkjent av NIST
+- SHA-0 og SHA-1 er usikre. Mindre sårbar enn MD5, fremdeles i bruk, 160-bit
+- SHA-2 (256 bits), mest brukt i dag
+
+
+Smurfe-angrep
+---------------------------
+Broadcast ICMP angrep (med ip spoofing)
+
+Sårbarheter i IP (v4)
+------------------------------
+- Ukryptert overføring
+- Ingen avsender-autentisering
+- Ingen integritets-testing
+- Ingen bitrate-retriksjoner  (kan injisere vilkårlige mengder pakker inn i et nett, har broadcast, så DoS med ICMP broadcast DoSing er mulig)
+
+
+Klassiske definisjoner (historisk)
+----------------------------------
+- Vi kan dele malware opp i ulike typer ut fra hvordan den spres og hvordan den skjuler seg
+
+SPREDNING:
+- VIRUS: 
+- ORM: sprer seg gjerne over nettverk, via epost osv. Ikke et virus siden de ikke infiserer eller gjør endringer lokalt 
+
+SKJULE SEG:
+- ROOTKIT
+- TROJANER
+
+PAYLOAD:
+- ALT FRA HUUMOR OG IRRITASJON TIL RAN 
+
+
+
+
